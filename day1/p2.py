@@ -1,5 +1,5 @@
 import re
-
+# Not written by me
 map = {
 	"one": 1,
 	"two": 2,

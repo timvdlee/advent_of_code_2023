@@ -1,5 +1,6 @@
 import re
-
+# This took me like 5 hours to figure out. 
+# It ended up being too hight by 1 and I have no clue why
 map = {
 	"one": 1,
 	"two": 2,
