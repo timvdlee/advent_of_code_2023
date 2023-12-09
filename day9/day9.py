@@ -1,5 +1,3 @@
-from tqdm import tqdm
-
 
 def parseInput(content):
     return [list(map(int,line.split())) for line in content.splitlines()]

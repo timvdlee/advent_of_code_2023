@@ -1,13 +1,13 @@
-from collections import deque
+from tqdm import tqdm
 
 def parseInput(content):
     return [list(map(int,line.split())) for line in content.splitlines()]
     
     
 def buildNumberTree(numberList):
-    numberTree = deque([deque(numberList)])
-    while numberTree[-1] != deque([0]*len(numberTree[-1])):
-        nextNumReeks = deque([])
+    numberTree = [numberList]
+    while numberTree[-1] != [0]*len(numberTree[-1]):
+        nextNumReeks = []
         lastNums = numberTree[-1]
         for i in range(0,len(lastNums)-1):
             nextNumReeks.append(lastNums[i]-lastNums[i+1])
@@ -17,7 +17,7 @@ def buildNumberTree(numberList):
 def predictNextNum(numberTree):
     addToNextCycle = 0
     for nums in reversed(numberTree):
-        nums.appendleft(nums[0]+addToNextCycle)
+        nums.insert(0,(nums[0]+addToNextCycle))
         addToNextCycle = nums[0]
     return numberTree[0][0]
 
